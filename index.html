@@ -14,7 +14,7 @@
             width: 70%;
             color: #000080;
         }
-        #videoElement {
+        #videos {
             width: 100%;
         }
         </style>
@@ -23,12 +23,12 @@
     <body>
         <div id="main">
             <h1>Espelho - Your useless mirror in your browser</h1>
-            <video autoplay="true" id="videoElement">
+            <video autoplay="true" id="videos">
             
             </video>
         </div>
         <script>
-            var video = document.querySelector("#videoElement");
+            var video = document.querySelector("#videos");
 
             if (navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true })
@@ -36,7 +36,7 @@
                 video.srcObject = stream;
                 })
                 .catch(function (err0r) {
-                console.log("Something went wrong!");
+                console.log("We couldn't mirror you, sorry!");
                 });
             }
         </script>
